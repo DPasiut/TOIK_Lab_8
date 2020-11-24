@@ -17,12 +17,7 @@ public class IdentificationNumberApiController {
     public ResponseEntity<Void> checkIdentificationNumber(@RequestParam(defaultValue = "") String id) {
         LOGGER.info("--- check identification number: {}", id);
 
-        // TODO: Bardzo prosze dokonczyc implementacje walidacji numeru PESEL
-        // TODO: Jesli pesel jest poprawny usluga powinna zwracac kod bledu 200 (OK)
-        // TODO: W przeciwnym wypadku usluga powinna zwracac kod bledu 400 (BAD REQUEST)
-        // TODO: Bardzo prosze unikac implementacji logiki w kontrolerze!
-
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ValidationPesel().validation(id);
     }
 
 }
